@@ -12,6 +12,10 @@
         <servlet-name>Deconnexion</servlet-name>
         <servlet-class>jeu.Deconnexion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Couleur</servlet-name>
+        <servlet-class>jeu.Couleur</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ReceptionDeplacement</servlet-name>
         <url-pattern>/reception-deplacement</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Deconnexion</servlet-name>
         <url-pattern>/deconnexion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Couleur</servlet-name>
+        <url-pattern>/couleur</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
