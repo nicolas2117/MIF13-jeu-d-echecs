@@ -1,0 +1,38 @@
+root {
+    display: block;
+}
+
+html { 
+    background-color: #a1b4fd;
+}
+
+div.case {
+    height: 50px;
+    width: 50px;
+    float: left;
+}
+
+div.hover {
+    background-color: yellowgreen;
+}
+
+div.case img {
+    height: 50px;
+    width: 50px;
+}
+
+div.blanc {
+	background-color: #f6e0b6;
+}
+
+div.noir {
+	background-color: #986e4e;
+}
+
+div.echiquier {
+	height: 400px;
+	width: 400px;
+}
+
+
+
