@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="jeu" default="default" basedir=".">
-    <description>Builds, tests, and runs the project jeu.</description>
+<project name="MIF13-jeu-d-echecs" default="default" basedir=".">
+    <description>Builds, tests, and runs the project MIF13-jeu-d-echecs.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
