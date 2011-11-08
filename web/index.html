@@ -2,18 +2,32 @@
 <html>
     <head>
         <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
         <script type="text/javascript" src="echecs.js"></script>
     </head>
     <body>
-        <button type="button" id="afficherPions">Afficher les pions</button>
+        <div id="debug"></div>
+        <div class="login">
+            <h1>Jeu d'échecs</h1>
+            <p>Entrez un pseudonyme pour jouer…</p>
+            <p id="ErreurPseudo"></p>
+            <p><span>Pseudo :</span> <input type="text" name="nom" id="inputPseudo" value=""/></p>
+            <p><button id="validPseudo">Valider</button></p>
+
+        </div>
+        <div id="listeJoueurs">
+            <h1>Liste des joueurs</h1>
+            <p>Veuillez selectionner votre adversaire :</p>
+            <div>Chargement en cours…</div>
+        </div>
         <div class="echiquier" >
-            <div  id="tour"></div>
+            <div id="gauche"></div>
             <div id="plateau"></div>
+            <div id="droite"></div>
         </div>
     </body>
 </html>

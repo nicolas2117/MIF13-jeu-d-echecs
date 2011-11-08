@@ -1,7 +1,49 @@
+function validerPseudo(){
+    $.get("pseudo.jsp",{
+        pseudo: $("#inputPseudo").val()
+    },function(XMLDoc) {
+        if ( $(XMLDoc).find("statut").text() == "ERREUR" ) {
+            // code d'erreur recu, message d'erreur
+            $("#ErreurPseudo").hide();
+            $("#ErreurPseudo").text("Le pseudo est déja utilisé ou est invalide.");
+            $("#ErreurPseudo").slideDown(1200);
+        }
+        else if ($(XMLDoc).find("statut").text() == "OK"){
+            //Code ok recu, on passe a la suite
+            $("div.login").hide( 'highlight', null, 'fast', function() {
+                $("div#listeJoueurs").show('highlight', null, 'fast', listeJoueurs);
+            });
+        }
+        else {
+            //code inconnu recu
+            window.alert("Code inconnu reçu.");
+        }
+    });
+}
+
+function listeJoueurs() {
+    $.get("liste-utilisateurs.jsp",null,function(XMLDoc) {
+        var chaine = "";
+        
+        $(XMLDoc).find("liste").find("joueur").each(function(id){
+            chaine+='<div class="elemListe"><span>'+$(this).find("pseudo").text()+"</span></div>"
+        });
+        $("div#listeJoueurs div").html(chaine);
+    });
+}
+
 $(document).ready(function() {
+    //Génération du plateau qui resté caché
     afficherPlateau ();
+    //Placement des pions
     ajouterPions();
+  
+    //Affichage du formulaire pseudo
+    $("div.login").delay(1000).slideDown(1200);
+    $("#validPseudo").click(validerPseudo);
 });
+
+
 
 function dragstop (event, ui) {
     var posPlateau = $("#plateau").position();
@@ -10,7 +52,6 @@ function dragstop (event, ui) {
     $("#case"+x+"-"+y).append(this);
     this.offsetLeft = 0;
     this.offsetTop = 0;
-    
 }
 
 function dragged(event, ui) {
@@ -20,7 +61,7 @@ function dragged(event, ui) {
     //$("#case"+x+"-"+y).append(this);
     //this.offsetLeft = 0;
     //this.offsetTop = 0;
-   /* $(".case").each(function () {
+    /* $(".case").each(function () {
         $("#case"+x+"-"+y).delClass("hover")
     });*/
     
@@ -30,7 +71,12 @@ function dragged(event, ui) {
 function ajouterImage (caseX, caseY, image) {
     caseID = "#case"+caseX+"-"+caseY;
     $(caseID).append('<img src="'+image+'">');
-    $(caseID).find("img").draggable({stop: dragstop, drag: dragged, revert: true, revertDuration: 0});
+    $(caseID).find("img").draggable({
+        stop: dragstop, 
+        drag: dragged, 
+        revert: true, 
+        revertDuration: 0
+    });
 }
 
 function afficherPlateau () {
@@ -89,10 +135,6 @@ function ajouterPions () {
     ajouterImage (7, 6, "img/Pion_blanc.png");
 
 }
-
-$("#afficherPions").click(function () {
-    
-    });
 
 
 

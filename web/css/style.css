@@ -4,6 +4,8 @@ root {
 
 html { 
     background-color: #a1b4fd;
+    font-family: "Lucida Grande", Lucida,Calibri,Ubuntu,Arial,Helvetica,sans-serif;
+    font-size: 14px;
 }
 
 div.case {
@@ -22,17 +24,117 @@ div.case img {
 }
 
 div.blanc {
-	background-color: #f6e0b6;
+    background-color: #f6e0b6;
 }
 
 div.noir {
-	background-color: #986e4e;
+    background-color: #986e4e;
 }
 
 div.echiquier {
-	height: 400px;
-	width: 400px;
+    height: 402px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    display:none;
+    background-color:#E4EFFF;
+    box-shadow:2px 2px 10px gray;
+    -moz-box-shadow:2px 2px 10px gray;
+    -webkit-box-shadow:2px 2px 10px gray;
+    border:1px solid #c0c0c0;
+    border-radius:20px 0; 
+    -moz-border-radius:20px 0;
+    -webkit-border-radius:20px 0 20px 0;
 }
 
+div#plateau {
+    height: 400px;
+    width: 400px;
+    float: left;
+    border:1px solid #c0c0c0;
+}
+
+div.login {
+    display: none;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    z-index: 100;
+    background-color:#E4EFFF;
+    border:1px solid #c0c0c0;
+    padding:25px;
+    border-radius:20px 0; 
+    -moz-border-radius:20px 0;
+    -webkit-border-radius:20px 0 20px 0;
+    box-shadow:2px 2px 10px gray;
+    -moz-box-shadow:2px 2px 10px gray;
+    -webkit-box-shadow:2px 2px 10px gray;
+}
+
+div#listeJoueurs {
+    display: none;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    z-index: 100;
+    background-color:#E4EFFF;
+    border:1px solid #c0c0c0;
+    padding:25px;
+    border-radius:20px 0; 
+    -moz-border-radius:20px 0;
+    -webkit-border-radius:20px 0 20px 0;
+    box-shadow:2px 2px 10px gray;
+    -moz-box-shadow:2px 2px 10px gray;
+    -webkit-box-shadow:2px 2px 10px gray;
+}
+
+div.login p {
+    text-align: center;
+}
+
+div.login p span {
+    text-align: left;
+    width: 150px;
+}
+
+div.login input {
+    width: 150px;
+}
+
+div.login button#validPseudo {
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+    height: 20px;
+    cursor:pointer;
+    background-color:white;
+    border:1px solid #c0c0c0;
+    border-radius:10px 0; 
+    -moz-border-radius:10px 0;
+    -webkit-border-radius:10px 0 10px 0;
+}
+
+
+div.login input {
+    background-color:white;
+    border:1px solid #c0c0c0;
+    border-radius:5px 0; 
+    -moz-border-radius:5px 0;
+    -webkit-border-radius:5px 0 5px 0;
+}
+
+p#ErreurPseudo {
+    display: none;
+    color: red;
+}
+
+div#gauche, div#droite {
+    width: 100px;
+    height: 402px;
+    float: left;
+}
 
 
